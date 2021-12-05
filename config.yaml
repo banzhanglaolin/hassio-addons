@@ -1,0 +1,16 @@
+version: 4.43.0
+slug: v2ray
+name: v2fly-core
+description: Visit the world beyond the Great Wall
+url: https://github.com/banzhanglaolin/hassio-v2ray
+arch:
+  - armhf
+  - armv7
+  - arm64
+  - amd64
+  - i386
+hassio_api: true
+host_network: true
+image: v2fly/v2fly-core
+init: false
+startup: services
