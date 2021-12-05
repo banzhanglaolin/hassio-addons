@@ -5,7 +5,7 @@ description: Visit the world beyond the Great Wall
 url: https://github.com/banzhanglaolin/hassio-addons/blob/master/v2fly-core/
 arch:
   - armv7
-  - arm64
+  - aarch64
   - amd64
   - i386
 hassio_api: true
