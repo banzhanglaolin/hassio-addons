@@ -2,9 +2,8 @@ version: 4.43.0
 slug: v2ray
 name: v2fly-core
 description: Visit the world beyond the Great Wall
-url: https://github.com/banzhanglaolin/hassio-v2ray
+url: https://github.com/banzhanglaolin/hassio-addons/edit/master/v2fly-core/
 arch:
-  - armhf
   - armv7
   - arm64
   - amd64
