@@ -13,4 +13,4 @@ RUN set -ex \
 	&& /root/v2ray.sh "${TARGETPLATFORM}" "${TAG}"
 
 VOLUME /etc/v2ray
-CMD [ "/usr/bin/v2ray", "-config", "/etc/v2ray/config.json" ]
+CMD [ "/usr/bin/v2ray", "-config", "/data/v2ray/config.json" ]
