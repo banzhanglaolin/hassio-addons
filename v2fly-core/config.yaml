@@ -16,3 +16,4 @@ init: false
 map:
   - config:rw
 startup: services
+environment:
