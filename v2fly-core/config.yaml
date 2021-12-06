@@ -25,7 +25,7 @@ options:
 schema:
   loglevel: str
   protocol: str
-  address: int
+  address: str
   port: int
   users_id: str
   alterid:  int
