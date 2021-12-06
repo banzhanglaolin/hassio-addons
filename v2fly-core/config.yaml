@@ -15,12 +15,12 @@ hassio_api: true
 docker_api: true
 startup: services
 ports:
-  - 10809/tcp: 10809
-  - 10808/tcp: 10808
-  - 10809/udp: null
-  - 10808/udp: null
+  10809/tcp: 10809
+  10808/tcp: 10808
+  10809/udp: null
+  10808/udp: null
 ports_description: 
-  - 10808/tcp: "v2fly-core socks"
-  - 10808/udp: "v2fly-core socks"
-  - 10809/tcp: "v2fly-core http"
-  - 10809/udp: "v2fly-core http"
+  10808/tcp: "v2fly-core socks"
+  10808/udp: "v2fly-core socks"
+  10809/tcp: "v2fly-core http"
+  10809/udp: "v2fly-core http"
