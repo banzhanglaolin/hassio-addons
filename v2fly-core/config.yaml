@@ -8,6 +8,7 @@ arch:
   - aarch64
   - amd64
   - i386
+boot: auto
 hassio_api: true
 host_network: true
 image: v2fly/v2fly-core
