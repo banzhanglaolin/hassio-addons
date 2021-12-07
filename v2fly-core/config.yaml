@@ -27,7 +27,7 @@ options:
     system:
       statsOutboundUplink: true
         statsOutboundDownlink: true
-log:
-  access: null
-  error:
-  loglevel: "warning"
+  log:
+    access: null
+    error:
+    loglevel: "warning"
