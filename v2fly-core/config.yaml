@@ -9,7 +9,7 @@ arch:
   - amd64
   - i386
 boot: auto
-image: v2fly/v2fly-core
+image: banzhanglaolin/v2fly-core
 init: false
 startup: services
 ports:
