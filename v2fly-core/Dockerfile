@@ -7,9 +7,9 @@ ARG TAG
 COPY v2ray.sh /root/v2ray.sh
 
 RUN set -ex \
-	&& apk add --no-cache tzdata openssl ca-certificates \
-	&& mkdir -p /etc/v2ray /usr/local/share/v2ray /var/log/v2ray \
-	&& chmod +x /root/v2ray.sh \
-	&& /root/v2ray.sh "${TARGETPLATFORM}" "${TAG}"
+        && apk add --no-cache tzdata openssl ca-certificates \
+        && mkdir -p /data/v2ray/ /etc/v2ray /usr/local/share/v2ray /var/log/v2ray \
+        && chmod +x /root/v2ray.sh \
+        && /root/v2ray.sh "${TARGETPLATFORM}" "${TAG}"
 
-CMD [ "/usr/bin/v2ray", "-config", "/data/options.json" ]
+CMD [ "/usr/bin/v2ray", "-config", "/data/v2ray/config.json" ]
