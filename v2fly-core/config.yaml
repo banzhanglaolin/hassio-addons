@@ -23,6 +23,10 @@ ports_description:
   10809/tcp: "v2fly-core http"
   10809/udp: "v2fly-core http"
 options:
+  policy:
+    system:
+      statsOutboundUplink: true
+      statsOutboundDownlink: true
   credential_secret: ""
   theme: default
   http_node:
@@ -38,6 +42,10 @@ options:
   npm_packages: []
   init_commands: []
 schema:
+  policy:
+    system:
+      statsOutboundUplink: bool
+      statsOutboundDownlink: bool
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
   credential_secret: password
   theme: list(default|dark|dracula|midnight-red|oled|solarized-dark|solarized-light)?
