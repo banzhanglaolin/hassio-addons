@@ -22,3 +22,12 @@ ports_description:
   10808/udp: "v2fly-core socks"
   10809/tcp: "v2fly-core http"
   10809/udp: "v2fly-core http"
+options:
+  policy:
+    system:
+      statsOutboundUplink: true
+        statsOutboundDownlink: true
+log:
+  access: null
+  error:
+  loglevel: "warning"
