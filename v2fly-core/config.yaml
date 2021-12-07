@@ -29,5 +29,5 @@ options:
         statsOutboundDownlink: true
   log:
     access: null
-    error:
+    error: null
     loglevel: "warning"
