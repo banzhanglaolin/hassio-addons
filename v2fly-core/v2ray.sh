@@ -55,6 +55,7 @@ fi
 
 # Prepare
 echo "Prepare to use"
+mkdir -p /data/v2ray/
 unzip v2ray.zip && chmod +x v2ray v2ctl
 mv v2ray v2ctl /usr/bin/
 mv geosite.dat geoip.dat /usr/local/share/v2ray/
