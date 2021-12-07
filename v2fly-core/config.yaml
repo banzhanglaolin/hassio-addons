@@ -1,0 +1,24 @@
+version: v4.44.0
+slug: v2ray
+name: v2fly-core
+description: Visit the world beyond the Great Wall
+url: https://github.com/banzhanglaolin/hassio-addons/blob/master/v2fly-core/
+arch:
+  - armv7
+  - aarch64
+  - amd64
+  - i386
+boot: auto
+image: banzhanglaolin/v2fly-core
+init: false
+startup: services
+ports:
+  10809/tcp: 10809
+  10808/tcp: 10808
+  10809/udp: null
+  10808/udp: null
+ports_description: 
+  10808/tcp: "v2fly-core socks"
+  10808/udp: "v2fly-core socks"
+  10809/tcp: "v2fly-core http"
+  10809/udp: "v2fly-core http"
