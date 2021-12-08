@@ -1,4 +1,4 @@
-#!/usr/bin/with-contenv bashio
+#!/bin/sh
 
 # Set ARG
 PLATFORM=$1
@@ -7,16 +7,19 @@ if [ -z "$PLATFORM" ]; then
     ARCH="64"
 else
     case "$PLATFORM" in
-        home-assistant/i386-base:3.14)
+        linux/386)
             ARCH="32"
             ;;
-        home-assistant/amd64-base:3.14)
+        linux/amd64)
             ARCH="64"
             ;;
-        home-assistant/armv7-base:3.14|ghcr.io/home-assistant/armhf-base:3.14)
+        linux/arm/v6)
+            ARCH="arm32-v6"
+            ;;
+        linux/arm/v7)
             ARCH="arm32-v7a"
             ;;
-        home-assistant/aarch64-base:3.14)
+        linux/arm64|linux/arm64/v8)
             ARCH="arm64-v8a"
             ;;
         *)
