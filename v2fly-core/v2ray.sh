@@ -7,19 +7,16 @@ if [ -z "$PLATFORM" ]; then
     ARCH="64"
 else
     case "$PLATFORM" in
-        linux/386)
+        home-assistant/i386-base:3.14)
             ARCH="32"
             ;;
-        linux/amd64)
+        home-assistant/amd64-base:3.14)
             ARCH="64"
             ;;
-        linux/arm/v6)
-            ARCH="arm32-v6"
-            ;;
-        linux/arm/v7)
+        home-assistant/armv7-base:3.14|ghcr.io/home-assistant/armhf-base:3.14)
             ARCH="arm32-v7a"
             ;;
-        linux/arm64|linux/arm64/v8)
+        home-assistant/aarch64-base:3.14)
             ARCH="arm64-v8a"
             ;;
         *)
