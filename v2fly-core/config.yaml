@@ -23,12 +23,17 @@ ports_description:
   10809/tcp: "v2fly-core http"
   10809/udp: "v2fly-core http"
 options:
-  loglevel: warning
-  protocol: vmess
-  address: null
-  port: null
-  id: null
-  alterId: 0
-  security: none
-  network: tcp
-  type: http
+  credential_secret: ""
+  theme: default
+  http_node:
+    username: ""
+    password: ""
+  http_static:
+    username: ""
+    password: ""
+  ssl: true
+  certfile: fullchain.pem
+  keyfile: privkey.pem
+  system_packages: []
+  npm_packages: []
+  init_commands: []
