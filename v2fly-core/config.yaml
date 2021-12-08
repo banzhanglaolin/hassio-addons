@@ -37,3 +37,23 @@ options:
   system_packages: []
   npm_packages: []
   init_commands: []
+schema:
+  log_level: list(trace|debug|info|notice|warning|error|fatal)?
+  credential_secret: password
+  theme: list(default|dark|dracula|midnight-red|oled|solarized-dark|solarized-light)?
+  http_node:
+    username: str
+    password: password
+  http_static:
+    username: str
+    password: password
+  ssl: bool
+  certfile: str
+  keyfile: str
+  system_packages:
+    - str
+  npm_packages:
+    - str
+  init_commands:
+    - str
+  leave_front_door_open: bool?
