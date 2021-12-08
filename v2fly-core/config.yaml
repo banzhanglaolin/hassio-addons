@@ -36,7 +36,7 @@ schema:
   loglevel: list(trace|debug|info|notice|warning|error|fatal)?
   protocol: list(vmess)?
   address: str
-  port: str
+  port: port
   id: password
   alterId: int(0,)
   security: list(aes-128-gcm|chacha20-poly1305|auto|none|zero)?
