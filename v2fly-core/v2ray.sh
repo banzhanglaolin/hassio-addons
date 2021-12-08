@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # Set ARG
 PLATFORM=$1
@@ -53,13 +53,153 @@ else
     echo " Check have not passed yet " && exit 1
 fi
 
+
+
 # Prepare
 echo "Prepare to use"
-mkdir -p /data/v2ray/
 unzip v2ray.zip && chmod +x v2ray v2ctl
 mv v2ray v2ctl /usr/bin/
 mv geosite.dat geoip.dat /usr/local/share/v2ray/
-mv config.json /data/v2ray/config.json
+
+LOGLEVEL=$(bashio::config 'loglevel')
+PROTOCOL=$(bashio::config 'protocol')
+ADDRESS=$(bashio::config 'address')
+PORT=$(bashio::config 'port')
+ID=$(bashio::config 'id')
+ALTERID=$(bashio::config 'alterId')
+SECURITY=$(bashio::config 'security')
+NETWORK=$(bashio::config 'network')
+TYPE=$(bashio::config 'type')
+
+echo -e "{
+  \"policy\": {
+    \"system\": {
+      \"statsOutboundUplink\": true,
+      \"statsOutboundDownlink\": true
+    }
+  },
+  \"log\": {
+    \"access\": \"\",
+    \"error\": \"\",
+    \"loglevel\": \"${LOGLEVEL}\"
+  },
+  \"inbounds\": [
+    {
+      \"tag\": \"socks\",
+      \"port\": 10808,
+      \"listen\": \"0.0.0.0\",
+      \"protocol\": \"socks\",
+      \"sniffing\": {
+        \"enabled\": true,
+        \"destOverride\": [
+          \"http\",
+          \"tls\"
+        ]
+      },
+      \"settings\": {
+        \"auth\": \"noauth\",
+        \"udp\": true,
+        \"allowTransparent\": false
+      }
+    },
+    {
+      \"tag\": \"http\",
+      \"port\": 10809,
+      \"listen\": \"0.0.0.0\",
+      \"protocol\": \"http\",
+      \"sniffing\": {
+        \"enabled\": true,
+        \"destOverride\": [
+          \"http\",
+          \"tls\"
+        ]
+      },
+      \"settings\": {
+        \"udp\": true,
+        \"allowTransparent\": false
+      }
+    }
+  ],
+  \"outbounds\": [
+    {
+      \"tag\": \"proxy\",
+      \"protocol\": \"${PROTOCOL}\",
+      \"settings\": {
+        \"vnext\": [
+          {
+            \"address\": \"${ADDRESS}\",
+            \"port\": ${PORT},
+            \"users\": [
+              {
+                \"id\": \"${ID}\",
+                \"alterId\": ${ALTERID},
+                \"email\": \"t@t.tt\",
+                \"security\": \"${SECURITY}\"
+              }
+            ]
+          }
+        ]
+      },
+      \"streamSettings\": {
+        \"network\": \"${NETWORK}\"
+      },
+      \"mux\": {
+        \"enabled\": true,
+        \"concurrency\": 8
+      }
+    },
+    {
+      \"tag\": \"direct\",
+      \"protocol\": \"freedom\",
+      \"settings\": {}
+    },
+    {
+      \"tag\": \"block\",
+      \"protocol\": \"blackhole\",
+      \"settings\": {
+        \"response\": {
+          \"type\": \"${TYPE}\"
+        }
+      }
+    }
+  ],
+  \"stats\": {},
+  \"routing\": {
+    \"domainStrategy\": \"AsIs\",
+    \"domainMatcher\": \"linear\",
+    \"rules\": [
+      {
+        \"type\": \"field\",
+        \"outboundTag\": \"proxy\",
+        \"domain\": [
+          \"geosite:google\"
+        ]
+      },
+      {
+        \"type\": \"field\",
+        \"outboundTag\": \"direct\",
+        \"domain\": [
+          \"geosite:cn\"
+        ]
+      },
+      {
+        \"type\": \"field\",
+        \"outboundTag\": \"direct\",
+        \"ip\": [
+          \"geoip:private\",
+          \"geoip:cn\"
+        ]
+      },
+      {
+        \"type\": \"field\",
+        \"outboundTag\": \"block\",
+        \"domain\": [
+          \"geosite:category-ads-all\"
+        ]
+      }
+    ]
+  }
+}" > /etc/v2ray/config.json
 
 # Clean
 rm -rf ${PWD}/*
