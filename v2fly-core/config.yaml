@@ -22,3 +22,13 @@ ports_description:
   10808/udp: "v2fly-core socks"
   10809/tcp: "v2fly-core http"
   10809/udp: "v2fly-core http"
+options:
+  loglevel: warning
+  protocol: vmess
+  address: null
+  port: null
+  id: null
+  alterId: 0
+  security: none
+  network: tcp
+  type: http
