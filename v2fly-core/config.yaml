@@ -23,37 +23,22 @@ ports_description:
   10809/tcp: "v2fly-core http"
   10809/udp: "v2fly-core http"
 options:
-  credential_secret: ""
-  theme: default
-  http_node:
-    username: ""
-    password: ""
-  http_static:
-    username: ""
-    password: ""
-  ssl: true
-  certfile: fullchain.pem
-  keyfile: privkey.pem
-  system_packages: []
-  npm_packages: []
-  init_commands: []
+  loglevel: warning
+  protocol: vmess
+  address: null
+  port: null
+  id: null
+  alterId: 0
+  security: auto
+  network: tcp
+  type: http
 schema:
-  log_level: list(trace|debug|info|notice|warning|error|fatal)?
-  credential_secret: password
-  theme: list(default|dark|dracula|midnight-red|oled|solarized-dark|solarized-light)?
-  http_node:
-    username: str
-    password: password
-  http_static:
-    username: str
-    password: password
-  ssl: bool
-  certfile: str
-  keyfile: str
-  system_packages:
-    - str
-  npm_packages:
-    - str
-  init_commands:
-    - str
-  leave_front_door_open: bool?
+  loglevel: list(trace|debug|info|notice|warning|error|fatal)?
+  protocol: list(vmess)?
+  address: str
+  port: str
+  id: password
+  alterId: str
+  security: list(aes-128-gcm|chacha20-poly1305|auto|none|zero)?
+  network: list(tcp|kcp|ws|h2|quic|grpc)?
+  type: list(none|http)?
