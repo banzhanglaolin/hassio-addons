@@ -123,25 +123,25 @@ echo -e "{
   \"outbounds\": [
     {
       \"tag\": \"proxy\",
-      \"protocol\": \"${PROTOCOL}\",
+      \"protocol\": ${PROTOCOL},
       \"settings\": {
         \"vnext\": [
           {
-            \"address\": \"${ADDRESS}\",
+            \"address\": ${ADDRESS},
             \"port\": ${PORT},
             \"users\": [
               {
-                \"id\": \"${ID}\",
+                \"id\": ${ID},
                 \"alterId\": ${ALTERID},
                 \"email\": \"t@t.tt\",
-                \"security\": \"${SECURITY}\"
+                \"security\": ${SECURITY}
               }
             ]
           }
         ]
       },
       \"streamSettings\": {
-        \"network\": \"${NETWORK}\"
+        \"network\": ${NETWORK}
       },
       \"mux\": {
         \"enabled\": true,
@@ -158,7 +158,7 @@ echo -e "{
       \"protocol\": \"blackhole\",
       \"settings\": {
         \"response\": {
-          \"type\": \"${TYPE}\"
+          \"type\": ${TYPE}
         }
       }
     }
