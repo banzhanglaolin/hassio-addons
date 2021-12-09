@@ -3,7 +3,7 @@ https://hub.docker.com/r/v2fly/v2fly-core
 
 用于加速git下载
 
-#v2fly-core使用
+# v2fly-core使用
 
 安装该模块，前启动后再到/data映射的本地目录下添加v2ray的配置文件congfig.json后，启动
 
