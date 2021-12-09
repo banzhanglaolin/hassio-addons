@@ -162,6 +162,6 @@
 容器日志出现
 
 ```yaml
-[Warning] V2Ray 4.44.0 started
+[Warning] core: Xray 1.4.5 started
 ```
 启动成功
