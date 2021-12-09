@@ -1,0 +1,24 @@
+version: v1.4.5
+slug: xray
+name: xray-core
+description: Visit the world beyond the Great Wall
+url: https://github.com/banzhanglaolin/hassio-addons/blob/master/v2fly-core/
+arch:
+  - armv7
+  - aarch64
+  - amd64
+  - i386
+boot: auto
+image: banzhanglaolin/xray-core
+init: false
+startup: services
+ports:
+  10809/tcp: 10809
+  10808/tcp: 10808
+  10809/udp: null
+  10808/udp: null
+ports_description: 
+  10808/tcp: "xray-core socks"
+  10808/udp: "xray-core socks"
+  10809/tcp: "xray-core http"
+  10809/udp: "xray-core http"
