@@ -2,6 +2,7 @@
 https://hub.docker.com/r/banzhanglaolin/xray-core
 
 用于加速git下载
+
 #xray-core使用
 
 安装该模块，前启动后再到/data映射的本地目录下添加xray的配置文件congfig.json后，启动
