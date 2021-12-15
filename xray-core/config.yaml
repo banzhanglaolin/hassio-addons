@@ -2,7 +2,7 @@ version: v1.4.5
 slug: xray
 name: xray-core
 description: Visit the world beyond the Great Wall
-url: https://github.com/banzhanglaolin/hassio-addons/blob/master/v2fly-core/
+url: https://github.com/banzhanglaolin/hassio-addons/blob/master/xray-core/
 arch:
   - armv7
   - aarch64
