@@ -11,6 +11,7 @@ arch:
 boot: auto
 image: banzhanglaolin/xray-core
 init: false
+host_network: false
 startup: services
 ports:
   10809/tcp: 10809
