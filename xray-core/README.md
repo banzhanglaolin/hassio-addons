@@ -27,4 +27,6 @@ https://hub.docker.com/r/banzhanglaolin/xray-core
 
 `git config --global --unset http.proxy`
 
+查看当前代理:
 
+`git config --global --get http.proxy`
