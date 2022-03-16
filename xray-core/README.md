@@ -17,7 +17,7 @@ https://hub.docker.com/r/banzhanglaolin/xray-core
 
 3. 运行
 
-    `git config --global http.proxy http://homeassistant:7088`
+    `git config --global http.proxy http://homeassistant:10809`
 
 4. 如果HomeAssistant社区仓库已经丢失，可以在前端手工添加
 
